@@ -17,9 +17,9 @@ class CallManager: NSObject, CXProviderDelegate {
         provider?.setDelegate(self, queue: nil)
     }
 
-    func reportIncomingCall(uuid: UUID, handle: String) {
+    func reportIncomingCall(uuid: UUID, handle: CXHandle) {
         let update = CXCallUpdate()
-        update.remoteHandle = CXHandle(type: .phoneNumber, value: handle)
+        update.remoteHandle = handle
         update.hasVideo = false
 
         provider?.reportNewIncomingCall(with: uuid, update: update, completion: { error in

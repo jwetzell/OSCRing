@@ -1,3 +1,4 @@
+import CallKit
 import F53OSC
 
 class OSCServer: NSObject, F53OSCServerDelegate {
@@ -5,11 +6,22 @@ class OSCServer: NSObject, F53OSCServerDelegate {
     private var server: F53OSCServer = F53OSCServer()
     private var callManager: CallManager = CallManager()
     func take(_ message: F53OSCMessage?) {
-        let address = message?.addressPattern ?? ""
-        print("address \(address)")
-        if address == "/call/incoming" {
-            // TODO(jwetzell): make handle configurable from incoming message
-            callManager.reportIncomingCall(uuid: UUID(), handle: "+12345678910")
+        if let addressPattern = message?.addressPattern {
+            print("received address pattern: \(addressPattern)")
+            if addressPattern == "/call/incoming" {
+                if let arguments = message?.arguments {
+                    if arguments.count != 1 {
+                        print("incoming call must have one argument")
+                        return
+                    }
+                    let handle = String(describing: arguments[0])
+                    if handle.starts(with: "+") {
+                        callManager.reportIncomingCall(uuid: UUID(), handle: CXHandle(type: .phoneNumber, value: handle))
+                    } else {
+                        callManager.reportIncomingCall(uuid: UUID(), handle: CXHandle(type: .generic, value: handle))
+                    }
+                }
+            }
         }
     }
     
