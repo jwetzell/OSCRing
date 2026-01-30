@@ -17,15 +17,16 @@ class OSCServer: NSObject, F53OSCServerDelegate {
     override init(){
         super.init()
         self.server.delegate = self
-        // TODO(jwetzell): make port configurable
-        self.server.port = 8080
     }
     
-    func start(){
+    func start(port: UInt16){
+        print("OSC Server starting on port \(port)")
+        self.server.port = port
         self.server.startListening()
     }
     
     func stop(){
+        print("OSC Server stopped")
         self.server.stopListening()
     }
 }
