@@ -6,16 +6,20 @@
 //
 
 import SwiftUI
+import CallKit
 
 struct ContentView: View {
+    var callManager = CallManager()
+    private var oscServer = OSCServer()
+    private var oscClient = OSCClient()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        HStack {
+            Text("Server listening on port 8080")
         }
-        .padding()
+    }
+    
+    init(){
+        oscServer.start()
     }
 }
 

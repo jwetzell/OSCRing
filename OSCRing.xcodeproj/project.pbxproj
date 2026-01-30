@@ -6,13 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		51EA4C9E2F29CB7700230297 /* F53OSC in Frameworks */ = {isa = PBXBuildFile; productRef = 51EA4C9D2F29CB7700230297 /* F53OSC */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		51EA4C8A2F29C1C300230297 /* OSCRing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCRing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		51EA4C9B2F29CB0000230297 /* Exceptions for "OSCRing" folder in "OSCRing" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 51EA4C892F29C1C300230297 /* OSCRing */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		51EA4C8C2F29C1C300230297 /* OSCRing */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				51EA4C9B2F29CB0000230297 /* Exceptions for "OSCRing" folder in "OSCRing" target */,
+			);
 			path = OSCRing;
 			sourceTree = "<group>";
 		};
@@ -23,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51EA4C9E2F29CB7700230297 /* F53OSC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +83,7 @@
 			);
 			name = OSCRing;
 			packageProductDependencies = (
+				51EA4C9D2F29CB7700230297 /* F53OSC */,
 			);
 			productName = OSCRing;
 			productReference = 51EA4C8A2F29C1C300230297 /* OSCRing.app */;
@@ -94,6 +113,9 @@
 			);
 			mainGroup = 51EA4C812F29C1C300230297;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				51EA4C9C2F29CB7700230297 /* XCRemoteSwiftPackageReference "F53OSC" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 51EA4C8B2F29C1C300230297 /* Products */;
 			projectDirPath = "";
@@ -256,6 +278,8 @@
 				DEVELOPMENT_TEAM = JHA7H7P56J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OSCRing/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -288,6 +312,8 @@
 				DEVELOPMENT_TEAM = JHA7H7P56J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OSCRing/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -332,6 +358,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		51EA4C9C2F29CB7700230297 /* XCRemoteSwiftPackageReference "F53OSC" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Figure53/F53OSC";
+			requirement = {
+				kind = exactVersion;
+				version = 1.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		51EA4C9D2F29CB7700230297 /* F53OSC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51EA4C9C2F29CB7700230297 /* XCRemoteSwiftPackageReference "F53OSC" */;
+			productName = F53OSC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 51EA4C822F29C1C300230297 /* Project object */;
 }
